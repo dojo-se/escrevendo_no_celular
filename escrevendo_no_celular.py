@@ -1,12 +1,23 @@
 import unittest
 
-def escrevendo_no_celular(m):
+def escrevendo_no_celular(word):
 
-    return 1
+    caracteres = {"ABC": "2", "DEF": "3", "GHI": "4", "JKL": "5", "MNO" : "6", "PQRS": "7", "TUV": "8", "WXYZ": "9", " ": "0"}
+
+
+    for char in word:
+        for chave, valor in caracteres.items():
+            if char in chave:
+                return valor
+
+    return "2"
 
 class escrevendo_no_celular_test(unittest.TestCase):
-    def initial_test(self):
-        self.assertEquals(escrevendo_no_celular("A"), 1)
+    def test_A(self):
+        self.assertEquals(escrevendo_no_celular("A"), "2")
+
+    def test_B(self):
+        self.assertEquals(escrevendo_no_celular("D"), "3")
 
 
 if __name__ == '__main__':
