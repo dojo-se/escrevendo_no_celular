@@ -16,9 +16,11 @@ class escrevendo_no_celular_test(unittest.TestCase):
     def test_A(self):
         self.assertEquals(escrevendo_no_celular("A"), "2")
 
-    def test_B(self):
+    def test_D(self):
         self.assertEquals(escrevendo_no_celular("D"), "3")
 
+    def test_G(self):
+        self.assertEquals(escrevendo_no_celular("G"), "4")
 
 if __name__ == '__main__':
     unittest.main()
