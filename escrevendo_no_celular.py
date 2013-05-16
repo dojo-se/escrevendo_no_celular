@@ -4,13 +4,13 @@ def escrevendo_no_celular(word):
 
     caracteres = {"ABC": "2", "DEF": "3", "GHI": "4", "JKL": "5", "MNO" : "6", "PQRS": "7", "TUV": "8", "WXYZ": "9", " ": "0"}
 
-
+    output = ""
     for char in word:
         for chave, valor in caracteres.items():
             if char in chave:
-                return valor
+                output += valor
 
-    return "2"
+    return output
 
 class escrevendo_no_celular_test(unittest.TestCase):
     def test_A(self):
@@ -21,6 +21,9 @@ class escrevendo_no_celular_test(unittest.TestCase):
 
     def test_G(self):
         self.assertEquals(escrevendo_no_celular("G"), "4")
+
+    def test_AD(self):
+        self.assertEquals(escrevendo_no_celular("AD"), "23")
 
 if __name__ == '__main__':
     unittest.main()
