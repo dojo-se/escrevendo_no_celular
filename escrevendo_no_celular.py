@@ -8,7 +8,7 @@ def escrevendo_no_celular(word):
     for char in word:
         for chave, valor in caracteres.items():
             if char in chave:
-                output += valor
+                output += valor * (chave.find(char) + 1)
 
     return output
 
@@ -24,6 +24,9 @@ class escrevendo_no_celular_test(unittest.TestCase):
 
     def test_AD(self):
         self.assertEquals(escrevendo_no_celular("AD"), "23")
+
+    def test_B(self):
+        self.assertEquals(escrevendo_no_celular("B"), "22")
 
 if __name__ == '__main__':
     unittest.main()
